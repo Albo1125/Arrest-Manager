@@ -5,6 +5,8 @@ Arrest Manager is a plugin for LSPDFR by Albo1125 with nearly one million downlo
 
 [Check out my YouTube channel](https://www.youtube.com/channel/UCSDMQS6b2roa-dZ0vAyaVWg)
 
+[All donations are welcome and appreciated](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=T9T5RTSWX8PEY)
+
 ## Code & building
 Quite simple, clone the repo, place the below dependencies into a new **Arrest Manager/dependencies** folder. It should then build without issue.
 
