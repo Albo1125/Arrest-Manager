@@ -1,5 +1,5 @@
 # Arrest Manager
-Arrest Manager is a plugin for LSPDFR by Albo1125 with nearly one million downloads on lspdfr.com. 
+Arrest Manager is a plugin for LSPDFR by Albo1125 with nearly one million downloads on lspdfr.com. Originally released in 2015 under the name of 'More Jail Points', this is the first plugin for LSPDFR I ever wrote. In fact, it was my first ever proper C# project.
 
 [Download page here (contains plenty of info on features)](https://www.lcpdfr.com/files/file/8107-arrest-manager-grab-peds-more-jail-points-prisoner-transport-more/)
 
