@@ -15,7 +15,7 @@ Who remembers the More Jail Points and then the More Jail Points & Prisoner Tran
 The code requires an enormous amount of refactoring and optimization work which I do not currently have the time for.
 If you feel like it, please feel free to contribute by submitting a Pull Request. 
 They may make it into a release and, of course, you'll be credited appropriately.
-Obviously, feel free to use this as a resource to learn from and improve your programming skills for RPH (credits appreciated, please see licence also).
+Obviously, feel free to use this as a resource to learn from and improve your programming skills for RPH (credits appreciated, please see licence also if copying/using larger parts of the code).
 
 ## Developer dependencies
 * [Albo1125.Common by Albo1125](http://www.lcpdfr.com/files/file/10294-albo1125common/)
