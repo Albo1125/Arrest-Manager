@@ -92,7 +92,7 @@ namespace Arrest_Manager
 
                 if (EntryPoint.IsLSPDFRPlusRunning)
                 {
-                    API.LSPDFRPlusFuncs.AddCountToStatistic(EntryPoint.LSPDFRPlusSecurityGuid, "People grabbed");
+                    API.LSPDFRPlusFuncs.AddCountToStatistic(Main.PluginName, "People grabbed");
                 }
                 pedfollowing.Tasks.ClearImmediately();
 
@@ -214,7 +214,7 @@ namespace Arrest_Manager
                 }
                 if (EntryPoint.IsLSPDFRPlusRunning)
                 {
-                    API.LSPDFRPlusFuncs.AddCountToStatistic(EntryPoint.LSPDFRPlusSecurityGuid, "People made to follow you");
+                    API.LSPDFRPlusFuncs.AddCountToStatistic(Main.PluginName, "People made to follow you");
                 }
                 while (pedfollowing.Exists())
                 {
@@ -318,7 +318,7 @@ namespace Arrest_Manager
                     Functions.SetPedCantBeArrestedByPlayer(pedtobepickedup, true);
                     if (EntryPoint.IsLSPDFRPlusRunning)
                     {
-                        API.LSPDFRPlusFuncs.AddCountToStatistic(EntryPoint.LSPDFRPlusSecurityGuid, "Taxis called");
+                        API.LSPDFRPlusFuncs.AddCountToStatistic(Main.PluginName, "Taxis called");
                     }
                     float Heading;
                     bool UseSpecialID = true;

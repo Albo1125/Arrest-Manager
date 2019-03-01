@@ -160,7 +160,7 @@ namespace Arrest_Manager
                     carblip.Scale = 0.7f;
                     if (EntryPoint.IsLSPDFRPlusRunning)
                     {
-                        API.LSPDFRPlusFuncs.AddCountToStatistic(EntryPoint.LSPDFRPlusSecurityGuid, "Vehicles towed");
+                        API.LSPDFRPlusFuncs.AddCountToStatistic(Main.PluginName, "Vehicles towed");
                     }
                     Ped playerPed = Game.LocalPlayer.Character;
                     if (car.Model.IsCar && RecruitNearbyTowtruck(out driver, out towTruck))
@@ -526,7 +526,7 @@ namespace Arrest_Manager
                     Ped playerPed = Game.LocalPlayer.Character;
                     if (EntryPoint.IsLSPDFRPlusRunning)
                     {
-                        API.LSPDFRPlusFuncs.AddCountToStatistic(EntryPoint.LSPDFRPlusSecurityGuid, "Insurance pickups");
+                        API.LSPDFRPlusFuncs.AddCountToStatistic(Main.PluginName, "Insurance pickups");
                     }
                     Vector3 SpawnPoint = World.GetNextPositionOnStreet(playerPed.Position.Around(EntryPoint.SceneManagementSpawnDistance));
                     float travelDistance;
