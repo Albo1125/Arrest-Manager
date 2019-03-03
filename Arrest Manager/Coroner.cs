@@ -14,7 +14,7 @@ namespace Arrest_Manager
 
     internal class Coroner
     {
-        private static SoundPlayer cameraSound = new SoundPlayer("LSPDFR/Police Scanner/Arrest Manager Audio/Camera.wav");       
+        private static SoundPlayer cameraSound = new SoundPlayer("LSPDFR/audio/scanner/Arrest Manager Audio/Camera.wav");       
         public static Model coronerVehicleModel = new Model("SPEEDO");
         public static Model coronerModel = new Model("S_M_M_Doctor_01");
         private static List<Ped> bodiesBeingHandled = new List<Ped>();

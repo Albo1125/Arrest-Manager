@@ -2499,7 +2499,20 @@ namespace Arrest_Manager
                         GameFiber.Sleep(3200);
                         car.Heading = dropoff.Heading;
                         car.Position = dropoff.Position;
-                        suspect.Model.LoadAndWait();
+                        if (suspect.Exists())
+                        {
+                            suspect.Model.LoadAndWait();
+                        }
+                        else
+                        {
+                            Game.LogTrivial("Suspect to jail no longer exists - possible conflict with default lspdfr jail.");
+                            if (!Game.IsScreenFadedIn)
+                            {
+                                Game.FadeScreenIn(100);
+                            }
+                            return;
+                        }
+                        
                         if (dropoff.HasCells)
                         {
                             int ans = SpeechHandler.DisplayAnswers(new List<string>() { "Take " + Functions.GetPersonaForPed(suspect).FullName + " in yourself.", "Hand " + Functions.GetPersonaForPed(suspect).FullName + " over to another officer." });
