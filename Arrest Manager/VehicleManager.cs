@@ -160,7 +160,7 @@ namespace Arrest_Manager
                     carblip.Scale = 0.7f;
                     if (EntryPoint.IsLSPDFRPlusRunning)
                     {
-                        API.LSPDFRPlusFuncs.AddCountToStatistic(EntryPoint.LSPDFRPlusSecurityGuid, "Vehicles towed");
+                        API.LSPDFRPlusFuncs.AddCountToStatistic(Main.PluginName, "Vehicles towed");
                     }
                     Ped playerPed = Game.LocalPlayer.Character;
                     if (car.Model.IsCar && RecruitNearbyTowtruck(out driver, out towTruck))
@@ -521,12 +521,10 @@ namespace Arrest_Manager
                     carblip.Scale = 0.7f;
                     string modelName = car.Model.Name.ToLower();
                     modelName = char.ToUpper(modelName[0]) + modelName.Substring(1);
-                    //System.Media.SoundPlayer player = new System.Media.SoundPlayer("LSPDFR/Police Scanner/Arrest Manager Audio/EMAIL2.wav");
-                    //player.Play();
                     Ped playerPed = Game.LocalPlayer.Character;
                     if (EntryPoint.IsLSPDFRPlusRunning)
                     {
-                        API.LSPDFRPlusFuncs.AddCountToStatistic(EntryPoint.LSPDFRPlusSecurityGuid, "Insurance pickups");
+                        API.LSPDFRPlusFuncs.AddCountToStatistic(Main.PluginName, "Insurance pickups");
                     }
                     Vector3 SpawnPoint = World.GetNextPositionOnStreet(playerPed.Position.Around(EntryPoint.SceneManagementSpawnDistance));
                     float travelDistance;
@@ -627,10 +625,6 @@ namespace Arrest_Manager
                     businesscarblip.Delete();
                     GameFiber.Sleep(9000);
                     Game.DisplayNotification("mphud", "mp_player_ready", "~h~Mors Mutual Insurance", "~b~Vehicle Pickup Status Update", "Thank you for letting us collect our client's ~h~" + modelName + "!");
-                    //player = new System.Media.SoundPlayer("LSPDFR/Police Scanner/Arrest Manager Audio/EMAIL.wav");
-                    //player.Play();
-
-
                 }
 
                 catch (Exception e)

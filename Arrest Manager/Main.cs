@@ -37,12 +37,12 @@ namespace Arrest_Manager
             Functions.OnOnDutyStateChanged += Functions_OnOnDutyStateChanged;
 
         }
-        internal static Version Albo1125CommonVer = new Version("6.6.0.0");
-        internal static Version MadeForGTAVersion = new Version("1.0.1290.1");
+        internal static Version Albo1125CommonVer = new Version("6.6.3.0");
+        internal static Version MadeForGTAVersion = new Version("1.0.1604.1");
         internal static float MinimumRPHVersion = 0.51f;
-        internal static string[] AudioFilesToCheckFor = new string[] { "LSPDFR/Police Scanner/Arrest Manager Audio/Camera.wav" };
+        internal static string[] AudioFilesToCheckFor = new string[] { "LSPDFR/audio/scanner/Arrest Manager Audio/Camera.wav" };
         internal static Version RAGENativeUIVersion = new Version("1.6.3.0");
-        internal static Version MadeForLSPDFRVersion = new Version("0.3.38.5436");
+        internal static Version MadeForLSPDFRVersion = new Version("0.4.39.22580");
         internal static string[] OtherFilesToCheckFor = new string[] { };
 
         internal static string FileID = "8107";

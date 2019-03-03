@@ -25,14 +25,19 @@ namespace Arrest_Manager.API
             return LSPDFR_.API.Functions.DeterminePrisonSentence(MinMonths, MaxMonths, SuspendedChance);
         }
 
-        public static Guid GenerateSecurityGuid(string PluginName, string AuthorName, string Signature)
-        {
-            return LSPDFR_.API.ProtectedFunctions.GenerateSecurityGuid(System.Reflection.Assembly.GetExecutingAssembly(), PluginName, AuthorName, Signature);
-        }
+        //public static Guid GenerateSecurityGuid(string PluginName, string AuthorName, string Signature)
+        //{
+        //    return LSPDFR_.API.ProtectedFunctions.GenerateSecurityGuid(System.Reflection.Assembly.GetExecutingAssembly(), PluginName, AuthorName, Signature);
+        //}
 
-        public static void AddCountToStatistic(Guid SecurityGuid, string Statistic)
+        //public static void AddCountToStatistic(Guid SecurityGuid, string Statistic)
+        //{
+        //    LSPDFR_.API.ProtectedFunctions.AddCountToStatistic(SecurityGuid, Statistic);
+        //}
+
+        public static void AddCountToStatistic(string PluginName, string Statistic)
         {
-            LSPDFR_.API.ProtectedFunctions.AddCountToStatistic(SecurityGuid, Statistic);
+            LSPDFR_.API.ProtectedFunctions.AddCountToStatistic(PluginName, Statistic);
         }
 
         public static void AddQuestionToTrafficStop(Ped suspect, string Question, string Answer)

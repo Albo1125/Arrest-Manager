@@ -502,7 +502,7 @@ namespace Arrest_Manager
                     }
                     if (EntryPoint.IsLSPDFRPlusRunning)
                     {
-                        API.LSPDFRPlusFuncs.AddCountToStatistic(EntryPoint.LSPDFRPlusSecurityGuid, "Prisoners picked up");
+                        API.LSPDFRPlusFuncs.AddCountToStatistic(Main.PluginName, "Prisoners picked up");
                     }
                     playerPed.Inventory.GiveNewWeapon(new WeaponAsset("WEAPON_UNARMED"), 0, true);
                     TransportRegion trnsreg = null;
@@ -1648,7 +1648,7 @@ namespace Arrest_Manager
                     }
                     if (EntryPoint.IsLSPDFRPlusRunning)
                     {
-                        API.LSPDFRPlusFuncs.AddCountToStatistic(EntryPoint.LSPDFRPlusSecurityGuid, "Prisoners picked up");
+                        API.LSPDFRPlusFuncs.AddCountToStatistic(Main.PluginName, "Prisoners picked up");
                     }
                     
                     Game.LocalPlayer.Character.Inventory.GiveNewWeapon(new WeaponAsset("WEAPON_UNARMED"), 0, true);
@@ -1830,7 +1830,7 @@ namespace Arrest_Manager
                     }
                     if (EntryPoint.IsLSPDFRPlusRunning)
                     {
-                        API.LSPDFRPlusFuncs.AddCountToStatistic(EntryPoint.LSPDFRPlusSecurityGuid, "Prisoners picked up");
+                        API.LSPDFRPlusFuncs.AddCountToStatistic(Main.PluginName, "Prisoners picked up");
                     }
                     playerPed.Inventory.GiveNewWeapon(new WeaponAsset("WEAPON_UNARMED"), 0, true);
                     TransportRegion trnsreg = null;
@@ -2047,8 +2047,8 @@ namespace Arrest_Manager
                     }
                     if (EntryPoint.IsLSPDFRPlusRunning)
                     {
-                        API.LSPDFRPlusFuncs.AddCountToStatistic(EntryPoint.LSPDFRPlusSecurityGuid, "Prisoners picked up");
-                        API.LSPDFRPlusFuncs.AddCountToStatistic(EntryPoint.LSPDFRPlusSecurityGuid, "Prisoners picked up");
+                        API.LSPDFRPlusFuncs.AddCountToStatistic(Main.PluginName, "Prisoners picked up");
+                        API.LSPDFRPlusFuncs.AddCountToStatistic(Main.PluginName, "Prisoners picked up");
                     }
                     playerPed.Inventory.GiveNewWeapon(new WeaponAsset("WEAPON_UNARMED"), 0, true);
                     //Put cops in the vehicle
@@ -2494,12 +2494,25 @@ namespace Arrest_Manager
                         //Put car in specified position
                         if (EntryPoint.IsLSPDFRPlusRunning)
                         {
-                            API.LSPDFRPlusFuncs.AddCountToStatistic(EntryPoint.LSPDFRPlusSecurityGuid, "Prisoners taken to jail");
+                            API.LSPDFRPlusFuncs.AddCountToStatistic(Main.PluginName, "Prisoners taken to jail");
                         }
                         GameFiber.Sleep(3200);
                         car.Heading = dropoff.Heading;
                         car.Position = dropoff.Position;
-                        suspect.Model.LoadAndWait();
+                        if (suspect.Exists())
+                        {
+                            suspect.Model.LoadAndWait();
+                        }
+                        else
+                        {
+                            Game.LogTrivial("Suspect to jail no longer exists - possible conflict with default lspdfr jail.");
+                            if (!Game.IsScreenFadedIn)
+                            {
+                                Game.FadeScreenIn(100);
+                            }
+                            return;
+                        }
+                        
                         if (dropoff.HasCells)
                         {
                             int ans = SpeechHandler.DisplayAnswers(new List<string>() { "Take " + Functions.GetPersonaForPed(suspect).FullName + " in yourself.", "Hand " + Functions.GetPersonaForPed(suspect).FullName + " over to another officer." });
@@ -3138,10 +3151,10 @@ namespace Arrest_Manager
                 //Game.DisplayNotification("~b~Arrest Manager ~s~by ~b~Albo1125 ~s~has been loaded ~g~successfully!");
                 Game.LogTrivial("Arrest Manager by Albo1125 has loaded successfully.");
                 IsLSPDFRPlusRunning = IsLSPDFRPluginRunning("LSPDFR+", new Version("1.1.0.0"));
-                if (IsLSPDFRPlusRunning)
-                {
-                    LSPDFRPlusSecurityGuid = API.LSPDFRPlusFuncs.GenerateSecurityGuid("Arrest Manager", "Albo1125", "mOd2ZqIqjCtW/9ysfN4z5wSFZnZ+1GPr8acNMkdPoauakZAeXsOVs9m+ythvWn1P1b/LAiDKwvQIF7vAJ5ka+E33OFOqTC7DByE4eJfRFOUEIn8eKWA6h2x+YJhJcMhIoCCrn3itFNDTgWbcA9uDJE9z1I2MDq2uH8Nd6icz1IQ=");
-                }
+                //if (IsLSPDFRPlusRunning)
+                //{
+                //    LSPDFRPlusSecurityGuid = API.LSPDFRPlusFuncs.GenerateSecurityGuid("Arrest Manager", "Albo1125", "mOd2ZqIqjCtW/9ysfN4z5wSFZnZ+1GPr8acNMkdPoauakZAeXsOVs9m+ythvWn1P1b/LAiDKwvQIF7vAJ5ka+E33OFOqTC7DByE4eJfRFOUEIn8eKWA6h2x+YJhJcMhIoCCrn3itFNDTgWbcA9uDJE9z1I2MDq2uH8Nd6icz1IQ=");
+                //}
                 if (IsLSPDFRPluginRunning("PoliceSmartRadio"))
                 {
                     API.SmartRadioFuncs.AddActionToButton(Coroner.smartRadioMain, Coroner.CanBeCalled, "coroner");

@@ -17,7 +17,7 @@ namespace Arrest_Manager
 {
     internal static class SceneManager
     {
-        public static System.Media.SoundPlayer bleepPlayer = new System.Media.SoundPlayer("LSPDFR/Police Scanner/Arrest Manager Audio/RADIO_BLIP.wav");
+        public static System.Media.SoundPlayer bleepPlayer = new System.Media.SoundPlayer("LSPDFR/audio/scanner/Arrest Manager Audio/RADIO_BLIP.wav");
         private static Rage.Object MobilePhone;
 
         public static void ToggleMobilePhone(Ped ped, bool toggle)
