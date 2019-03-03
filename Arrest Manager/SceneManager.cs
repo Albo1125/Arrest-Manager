@@ -339,7 +339,7 @@ namespace Arrest_Manager
 
             _menuPool = new MenuPool();
             var menus = new List<dynamic>() { "Ped Manager", "Vehicle Manager" };
-            MenuSwitchListItem = new UIMenuListItem("Scene Management", menus, 0);
+            MenuSwitchListItem = new UIMenuListItem("Scene Management", "", menus);
             CreatePedManagementMenu();
             
             _menuPool.Add(PedManagementMenu);
@@ -356,7 +356,7 @@ namespace Arrest_Manager
             
             if ((sender != PedManagementMenu && sender != vehicleManagementMenu) || list != MenuSwitchListItem) { return; }
            
-            string selectedmenustring = list.IndexToItem(index).ToString();
+            string selectedmenustring = list.Collection[list.Index].ToString();
 
             UIMenu selectedmenu;
             if (selectedmenustring == "Ped Manager")
