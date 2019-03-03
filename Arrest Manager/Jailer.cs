@@ -3150,7 +3150,7 @@ namespace Arrest_Manager
 
                 //Game.DisplayNotification("~b~Arrest Manager ~s~by ~b~Albo1125 ~s~has been loaded ~g~successfully!");
                 Game.LogTrivial("Arrest Manager by Albo1125 has loaded successfully.");
-                IsLSPDFRPlusRunning = IsLSPDFRPluginRunning("LSPDFR+", new Version("1.1.0.0"));
+                IsLSPDFRPlusRunning = IsLSPDFRPluginRunning("LSPDFR+", new Version("1.7.0.0"));
                 //if (IsLSPDFRPlusRunning)
                 //{
                 //    LSPDFRPlusSecurityGuid = API.LSPDFRPlusFuncs.GenerateSecurityGuid("Arrest Manager", "Albo1125", "mOd2ZqIqjCtW/9ysfN4z5wSFZnZ+1GPr8acNMkdPoauakZAeXsOVs9m+ythvWn1P1b/LAiDKwvQIF7vAJ5ka+E33OFOqTC7DByE4eJfRFOUEIn8eKWA6h2x+YJhJcMhIoCCrn3itFNDTgWbcA9uDJE9z1I2MDq2uH8Nd6icz1IQ=");
