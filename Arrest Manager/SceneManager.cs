@@ -459,22 +459,7 @@ namespace Arrest_Manager
                             nearestPed.IsRagdoll = false;
                         }
                         
-                    }
-
-                    foreach (Ped suspect in SuspectsManuallyArrested.ToArray())
-                    {
-                        if (suspect.Exists())
-                        {
-                            if (!NativeFunction.Natives.IS_ENTITY_PLAYING_ANIM<bool>(suspect, "mp_arresting", "idle", 3))
-                            {
-                                suspect.Tasks.PlayAnimation("mp_arresting", "idle", 8f, AnimationFlags.UpperBodyOnly | AnimationFlags.SecondaryTask | AnimationFlags.Loop);
-                            }
-                        }
-                        else
-                        {
-                            SuspectsManuallyArrested.Remove(suspect);
-                        }
-                    }
+                    }                   
 
                     if (callCoronerTime)
                     {

@@ -904,9 +904,8 @@ namespace Arrest_Manager
                 }
 
                 suspect = suspect.ClonePed(true);
-                Functions.SetPedAsArrested(suspect);
-                suspect.Tasks.PlayAnimation("mp_arresting", "idle", 8f, AnimationFlags.UpperBodyOnly | AnimationFlags.SecondaryTask | AnimationFlags.Loop);
-
+                Functions.SetPedAsArrested(suspect, true);
+                
                 //bool suspectInVehicle;
                 // If suspect in vehicle do the handcuff animation
                 if (!suspect.Exists() || !suspect.IsValid())
@@ -1099,18 +1098,11 @@ namespace Arrest_Manager
                 driverGetOut.WaitForCompletion();
                 passengerGetOut.WaitForCompletion();
                 firstSuspect = firstSuspect.ClonePed(true);
-                Functions.SetPedAsArrested(firstSuspect);
-                firstSuspect.Tasks.PlayAnimation("mp_arresting", "idle", 8f, AnimationFlags.UpperBodyOnly | AnimationFlags.SecondaryTask | AnimationFlags.Loop);
-
-
-
-
+                Functions.SetPedAsArrested(firstSuspect, true);
+                
                 secondSuspect = secondSuspect.ClonePed(true);
-                Functions.SetPedAsArrested(secondSuspect);
-                secondSuspect.Tasks.PlayAnimation("mp_arresting", "idle", 8f, AnimationFlags.UpperBodyOnly | AnimationFlags.SecondaryTask | AnimationFlags.Loop);
-
-
-
+                Functions.SetPedAsArrested(secondSuspect, true);
+                
                 if (!firstSuspect.Exists() || !firstSuspect.IsValid() || !secondSuspect.Exists() || !secondSuspect.IsValid())
                 {
                     return new Ped[] { null, null };
@@ -2998,7 +2990,6 @@ namespace Arrest_Manager
         private static List<TransportWorldDistrict> TransportWorldDistricts;
         private static List<Ped> OfficersCurrentlyTransporting = new List<Ped>();
         public static bool IsLSPDFRPlusRunning = false;
-        public static Guid LSPDFRPlusSecurityGuid;
         private static bool TransportSirenSoundEnabled = false;
         private static bool TransportSirenLightsEnabled = true;
         public static bool AllowWarping = true;

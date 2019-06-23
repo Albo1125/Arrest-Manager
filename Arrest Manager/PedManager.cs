@@ -252,8 +252,7 @@ namespace Arrest_Manager
             });
             
         }
-
-        public static List<Ped> SuspectsManuallyArrested = new List<Ped>();
+        
         public static void ArrestPed(Ped suspect = null)
         {
             GameFiber.StartNew(delegate
@@ -280,14 +279,13 @@ namespace Arrest_Manager
                         suspect.Tasks.ClearImmediately();
                     }
                 }
-                Functions.SetPedAsArrested(suspect);
+                Functions.SetPedAsArrested(suspect, true);
                 suspect.MakeMissionPed();
                 suspect.Tasks.ClearImmediately();
                 suspect.Tasks.StandStill(-1);
                 suspect.Tasks.PlayAnimation("mp_arresting", "idle", 8f, AnimationFlags.UpperBodyOnly | AnimationFlags.SecondaryTask | AnimationFlags.Loop);
                 
                 EntryPoint.suspectsArrestedByPlayer.Add(suspect);
-                SuspectsManuallyArrested.Add(suspect);
                 API.Functions.OnPlayerArrestedPed(suspect);
             });
         }

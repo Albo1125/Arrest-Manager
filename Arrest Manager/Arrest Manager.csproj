@@ -75,7 +75,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>dependencies\ComputerPlus.dll</HintPath>
     </Reference>
-    <Reference Include="LSPD First Response, Version=0.3.38.5436, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="LSPD First Response, Version=0.4.7110.32590, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>dependencies\LSPD First Response.dll</HintPath>
     </Reference>

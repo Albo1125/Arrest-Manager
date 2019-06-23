@@ -42,7 +42,7 @@ namespace Arrest_Manager
         internal static float MinimumRPHVersion = 0.51f;
         internal static string[] AudioFilesToCheckFor = new string[] { "LSPDFR/audio/scanner/Arrest Manager Audio/Camera.wav" };
         internal static Version RAGENativeUIVersion = new Version("1.6.3.0");
-        internal static Version MadeForLSPDFRVersion = new Version("0.4.39.22580");
+        internal static Version MadeForLSPDFRVersion = new Version("0.4.2");
         internal static string[] OtherFilesToCheckFor = new string[] { };
 
         internal static string FileID = "8107";
